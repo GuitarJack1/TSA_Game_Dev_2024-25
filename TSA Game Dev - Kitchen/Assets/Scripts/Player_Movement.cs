@@ -5,6 +5,9 @@ public class Player_Movement : MonoBehaviour
     private Rigidbody rb;
     private Player_Controls playerControls;
 
+    private float currSpeedForce;
+    private bool letGoAfterFreeze;
+
     [SerializeField]
     private float maxSpeed;
     [SerializeField]
@@ -30,6 +33,9 @@ public class Player_Movement : MonoBehaviour
 
         playerControls = new Player_Controls();
         playerControls.Players.Enable();
+
+        currSpeedForce = 0;
+        letGoAfterFreeze = true;
     }
 
     void FixedUpdate()
@@ -55,14 +61,29 @@ public class Player_Movement : MonoBehaviour
                 break;
         }
 
-        rb.AddForce(new Vector3(movementInput.x, 0, movementInput.y) * speedForce);
+        rb.AddForce(transform.forward * currSpeedForce);
 
-        Vector3 movementInput3D = new Vector3(movementInput.x, 0, movementInput.y);
-        if (movementInput3D != Vector3.zero)
+        if (movementInput.x != 0 && letGoAfterFreeze)
         {
-            Quaternion toRotation = Quaternion.LookRotation(movementInput3D, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
+            currSpeedForce = speedForce;
         }
+        else if (movementInput.x == 0)
+        {
+            letGoAfterFreeze = true;
+        }
+
+        if (movementInput.x < 0 && currSpeedForce != 0)
+            transform.Rotate(-Vector3.up * rotationSpeed);
+        else if (movementInput.x > 0 && currSpeedForce != 0)
+            transform.Rotate(Vector3.up * rotationSpeed);
+
+        // rb.AddForce(new Vector3(movementInput.x, 0, movementInput.y) * speedForce);
+        // Vector3 movementInput3D = new Vector3(movementInput.x, 0, movementInput.y);
+        // if (movementInput3D != Vector3.zero)
+        // {
+        //     Quaternion toRotation = Quaternion.LookRotation(movementInput3D, Vector3.up);
+        //     transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
+        // }
 
         speedLimit();
     }
@@ -77,6 +98,12 @@ public class Player_Movement : MonoBehaviour
             rb.linearVelocity = new Vector3(flatVel.x, rb.linearVelocity.y, flatVel.z);
         }
 
+    }
+
+    public void Freeze()
+    {
+        currSpeedForce = 0;
+        letGoAfterFreeze = false;
     }
 }
 
