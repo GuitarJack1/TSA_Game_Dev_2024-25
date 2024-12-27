@@ -4,6 +4,8 @@ using UnityEngine.Serialization;
 
 public class Trigger_Cube_Behavior : MonoBehaviour
 {
+    private GameObject playerInteracting;
+
     // Event delegates triggered onEnterTrigger
     [FormerlySerializedAs("onEnterTrigger")]
     [SerializeField]
@@ -14,19 +16,32 @@ public class Trigger_Cube_Behavior : MonoBehaviour
     [SerializeField]
     private UnityEvent m_OnExitTrigger = new UnityEvent();
 
+    void Start()
+    {
+        playerInteracting = null;
+    }
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
-            collider.gameObject.GetComponent<Player_Movement>().Freeze();
-            m_OnEnterTrigger.Invoke();
+            if (!playerInteracting)
+            {
+                collider.gameObject.GetComponent<Player_Movement>().Freeze();
+                playerInteracting = collider.gameObject;
+                m_OnEnterTrigger.Invoke();
+            }
         }
     }
     void OnTriggerExit(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
-            m_OnExitTrigger.Invoke();
+            if (collider.gameObject == playerInteracting)
+            {
+                playerInteracting = null;
+                m_OnExitTrigger.Invoke();
+            }
         }
     }
 
