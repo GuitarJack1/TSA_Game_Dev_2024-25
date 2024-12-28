@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e359cb0106beb843bad3d4dda102cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodType: 3
+  foodType: 1
   food_Mesh_Settings: {fileID: 11400000, guid: c818e5f35f0504c4db1e6013d4986700, type: 2}
 --- !u!4 &1379164911
 Transform:
