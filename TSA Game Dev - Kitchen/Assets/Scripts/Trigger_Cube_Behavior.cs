@@ -16,6 +16,9 @@ public class Trigger_Cube_Behavior : MonoBehaviour
     [SerializeField]
     private UnityEvent m_OnExitTrigger = new UnityEvent();
 
+    [SerializeField]
+    private bool freezePlayer;
+
     void Start()
     {
         playerInteracting = null;
@@ -27,7 +30,9 @@ public class Trigger_Cube_Behavior : MonoBehaviour
         {
             if (!playerInteracting)
             {
-                collider.gameObject.GetComponent<Player_Movement>().Freeze();
+                if (freezePlayer)
+                    collider.gameObject.GetComponent<Player_Movement>().Freeze();
+
                 playerInteracting = collider.gameObject;
                 m_OnEnterTrigger.Invoke();
             }

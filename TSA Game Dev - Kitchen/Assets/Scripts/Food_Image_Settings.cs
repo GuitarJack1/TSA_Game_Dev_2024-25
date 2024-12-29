@@ -1,21 +1,21 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "Food_Meshes", menuName = "Scriptable Objects/Food_Mesh_Settings", order = 1)]
-public class Food_Mesh_Settings : ScriptableObject
+[CreateAssetMenu(fileName = "Food_Image_Settings", menuName = "Scriptable Objects/Food_Image_Settings")]
+public class Food_Image_Settings : ScriptableObject
 {
-
     [Serializable] // Ensure this is serializable
-    public class EnumGameObjectPair
+    public class EnumImagePair
     {
         public Global_Variables.FoodType foodType;
-        public GameObject foodMesh;
+        public Texture foodImage;
         public float scale;
     }
 
     [SerializeField] // Make sure this field is serialized
-    private List<EnumGameObjectPair> foodMeshes = new List<EnumGameObjectPair>();
+    private List<EnumImagePair> foodMeshes = new List<EnumImagePair>();
 
     // Ensure each FoodType is unique and populate missing ones
     private void OnValidate()
@@ -28,7 +28,7 @@ public class Food_Mesh_Settings : ScriptableObject
         {
             if (!foodMeshes.Exists(pair => pair.foodType == type))
             {
-                foodMeshes.Add(new EnumGameObjectPair { foodType = type });
+                foodMeshes.Add(new EnumImagePair { foodType = type });
             }
         }
 
@@ -47,14 +47,14 @@ public class Food_Mesh_Settings : ScriptableObject
         }
     }
 
-    public List<EnumGameObjectPair> FoodMeshes => foodMeshes; // Optional accessor for runtime
+    public List<EnumImagePair> FoodMeshes => foodMeshes; // Optional accessor for runtime
 
-    public GameObject GetGameObject(Global_Variables.FoodType key)
+    public Texture GetTexture(Global_Variables.FoodType key)
     {
         foreach (var pair in foodMeshes)
         {
             if (pair.foodType == key)
-                return pair.foodMesh;
+                return pair.foodImage;
         }
         throw new KeyNotFoundException($"FoodType: {key} not found in map.");
     }
