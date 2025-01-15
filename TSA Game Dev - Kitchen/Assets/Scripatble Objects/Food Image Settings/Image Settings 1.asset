@@ -14,17 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodMeshes:
   - foodType: 0
-    foodImage: {fileID: 2800000, guid: 8977094d029da0649bb1a218c6a60192, type: 3}
+    foodImage: {fileID: 2800000, guid: 465cd83e27f908247b60e718e3c550fa, type: 3}
     scale: 1
   - foodType: 1
-    foodImage: {fileID: 2800000, guid: 7407bf8b3ea955243944c47598b237b3, type: 3}
+    foodImage: {fileID: 2800000, guid: 3835cdbf6ef72d5419e0b80d11de86bb, type: 3}
     scale: 1
   - foodType: 2
-    foodImage: {fileID: 2800000, guid: cea7c53738c25fe4782d748b32b382db, type: 3}
+    foodImage: {fileID: 2800000, guid: 8977094d029da0649bb1a218c6a60192, type: 3}
     scale: 1
   - foodType: 3
-    foodImage: {fileID: 2800000, guid: 7407bf8b3ea955243944c47598b237b3, type: 3}
+    foodImage: {fileID: 2800000, guid: 3fea1033c0929404192b698371030eec, type: 3}
     scale: 1
   - foodType: 4
-    foodImage: {fileID: 0}
+    foodImage: {fileID: 2800000, guid: 22d77acc7f3aa0a46aaf906262580ade, type: 3}
     scale: 1
+  - foodType: 5
+    foodImage: {fileID: 2800000, guid: 3fea1033c0929404192b698371030eec, type: 3}
+    scale: 1
+  - foodType: 6
+    foodImage: {fileID: 2800000, guid: 7407bf8b3ea955243944c47598b237b3, type: 3}
+    scale: 1
+  - foodType: 7
+    foodImage: {fileID: 2800000, guid: 0a6b1e3b90f4f8e4a8a5ef7bdfa931ea, type: 3}
+    scale: 1
+  - foodType: 8
+    foodImage: {fileID: 2800000, guid: 0a6b1e3b90f4f8e4a8a5ef7bdfa931ea, type: 3}
+    scale: 1
+  - foodType: 9
+    foodImage: {fileID: 2800000, guid: 465cd83e27f908247b60e718e3c550fa, type: 3}
+    scale: 1
+  - foodType: 10
+    foodImage: {fileID: 0}
+    scale: 0

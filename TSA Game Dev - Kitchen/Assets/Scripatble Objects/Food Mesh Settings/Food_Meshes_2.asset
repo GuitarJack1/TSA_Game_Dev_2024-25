@@ -14,17 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodMeshes:
   - foodType: 2
-    foodMesh: {fileID: 963739717108670263, guid: a80c00c662fe74118b43ad9cbb58853c, type: 3}
-    scale: 1.5
+    foodMesh: {fileID: 7334098755715255590, guid: 62b03dc09f6b94275ada9c0d39e5b2d3, type: 3}
+    scale: 2
   - foodType: 1
-    foodMesh: {fileID: 4446042087989776518, guid: fdf19312d22c047f7b92ac36a4ac658d, type: 3}
-    scale: 1
+    foodMesh: {fileID: 4367521387075689810, guid: 42b20d68150a40f44ac9cd9a29123d7e, type: 3}
+    scale: 2
   - foodType: 0
-    foodMesh: {fileID: 7743618930851061208, guid: 0d845b5caf3944589ade97bc7971118b, type: 3}
+    foodMesh: {fileID: 4179205776943551302, guid: 219e253d2043b4bf382f7fbe08130e26, type: 3}
     scale: 2
   - foodType: 3
-    foodMesh: {fileID: 3312883956077679648, guid: 0de69a46455f344d58a7dcaf12e541f2, type: 3}
-    scale: 0
+    foodMesh: {fileID: 3944793617797155257, guid: 273b0a646bf4f410c898f350686cf95d, type: 3}
+    scale: 2
   - foodType: 4
+    foodMesh: {fileID: 4367521387075689810, guid: 42b20d68150a40f44ac9cd9a29123d7e, type: 3}
+    scale: 2
+  - foodType: 5
+    foodMesh: {fileID: 5473569773201198281, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
+    scale: 2
+  - foodType: 6
+    foodMesh: {fileID: 2931599777171156985, guid: 6babded354a0947f5816d671762d9241, type: 3}
+    scale: 2
+  - foodType: 7
+    foodMesh: {fileID: 9004107507267555559, guid: a0345e1ce04d44947b508fbb0489ea35, type: 3}
+    scale: 2
+  - foodType: 8
+    foodMesh: {fileID: 4367521387075689810, guid: 42b20d68150a40f44ac9cd9a29123d7e, type: 3}
+    scale: 2
+  - foodType: 9
+    foodMesh: {fileID: 5448101533092959829, guid: 5a822460c94534437b7260f2b7c766dd, type: 3}
+    scale: 2
+  - foodType: 10
     foodMesh: {fileID: 0}
     scale: 0
