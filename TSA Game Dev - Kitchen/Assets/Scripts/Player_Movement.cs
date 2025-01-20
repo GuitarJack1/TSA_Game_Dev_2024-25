@@ -5,6 +5,8 @@ public class Player_Movement : MonoBehaviour
     private Rigidbody rb;
     private Player_Controls playerControls;
 
+    private Animator animator; // Reference to Animator
+
     private float currSpeedForce;
     private bool letGoAfterFreeze;
 
@@ -30,12 +32,18 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
         playerControls = new Player_Controls();
         playerControls.Players.Enable();
 
         currSpeedForce = 0;
         letGoAfterFreeze = true;
+        // Start the Walking animation
+        if (animator != null)
+        {
+            animator.Play("Walking");
+        }
     }
 
     void FixedUpdate()
