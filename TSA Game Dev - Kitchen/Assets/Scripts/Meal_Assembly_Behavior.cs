@@ -31,13 +31,17 @@ public class Meal_Assembly_Behavior : MonoBehaviour
 
     void Start()
     {
-        UpdateMealFoodList();
-        UpdateNeededFoodGraphics();
+        if (currentMeal)
+        {
+            UpdateMealFoodList();
+            UpdateNeededFoodGraphics();
+        }
     }
     public void UpdateMeal(Scriptable_Meal newMeal)
     {
         currentMeal = newMeal;
         UpdateMealFoodList();
+        UpdateNeededFoodGraphics();
     }
     private void UpdateMealFoodList()
     {
@@ -83,6 +87,10 @@ public class Meal_Assembly_Behavior : MonoBehaviour
 
     public bool IsFoodTypeNeeded(Global_Variables.FoodType foodType)
     {
+        if (!currentMeal)
+        {
+            return false;
+        }
         foreach (FoodTypeBooleanPair foodTypeBooleanPair in currentMealFoods)
         {
             if (foodTypeBooleanPair.foodType == foodType && foodTypeBooleanPair.stillNeeded)
@@ -91,5 +99,30 @@ public class Meal_Assembly_Behavior : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void CompleteFoodType(Global_Variables.FoodType foodType)
+    {
+        foreach (FoodTypeBooleanPair foodTypeBooleanPair in currentMealFoods)
+        {
+            if (foodTypeBooleanPair.foodType == foodType && foodTypeBooleanPair.stillNeeded)
+            {
+                foodTypeBooleanPair.stillNeeded = false;
+                UpdateNeededFoodGraphics();
+                return;
+            }
+        }
+    }
+
+    public bool FinishedMeal()
+    {
+        foreach (FoodTypeBooleanPair foodTypeBooleanPair in currentMealFoods)
+        {
+            if (foodTypeBooleanPair.stillNeeded)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
