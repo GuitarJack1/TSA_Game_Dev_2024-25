@@ -264,5 +264,8 @@ MonoBehaviour:
   targetPos: {fileID: 0}
   possibleMeals:
   - {fileID: 11400000, guid: f251ac924a1ef32498d898e144207b16, type: 2}
+  - {fileID: 11400000, guid: 3781c40fab900464a935947b413806a7, type: 2}
+  - {fileID: 11400000, guid: 2e5cd60e1b146ec42a576dd1b1c8bff3, type: 2}
   desiredDistFromPos: 0.1
   customerSpeed: 2
+  rb: {fileID: 0}

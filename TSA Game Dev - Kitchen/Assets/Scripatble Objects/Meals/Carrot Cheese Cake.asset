@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9902ed8f9e2531e489a730dabc4e10a8, type: 3}
-  m_Name: Steak_Dinner
+  m_Name: Carrot Cheese Cake
   m_EditorClassIdentifier: 
-  mealName: Steak Dinner
-  neededFoods: 020000000900000003000000
+  mealName: Carrot Cheese Cake
+  neededFoods: 010000000200000006000000

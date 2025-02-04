@@ -30,7 +30,7 @@ public class ModelToggle : MonoBehaviour
     void Start()
     {
         // Optionally, pick one to show at startup (e.g. index 0)
-        SwitchCharacter(0);
+        SwitchCharacter(Random.Range(0, characterModels.Count - 1));
     }
 
     // Call this method with an index to change which model is visible.

@@ -23,7 +23,7 @@ public class Wheat_Behavior : MonoBehaviour
                     collider.gameObject.GetComponent<Player_Movement>().Freeze();
 
                 playerInteracting = collider.gameObject;
-                food_Item_Behaviour.SetFoodType(Global_Variables.FoodType.Wheat);
+                food_Item_Behaviour.SetFoodType(Global_Variables.FoodType.Cabbage);
             }
         }
     }

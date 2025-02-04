@@ -17,7 +17,7 @@ MonoBehaviour:
     foodMesh: {fileID: 7334098755715255590, guid: 62b03dc09f6b94275ada9c0d39e5b2d3, type: 3}
     scale: 2
   - foodType: 1
-    foodMesh: {fileID: 4367521387075689810, guid: 42b20d68150a40f44ac9cd9a29123d7e, type: 3}
+    foodMesh: {fileID: 7040081593506954756, guid: 6d08c488831fb6f43931534c0980cf22, type: 3}
     scale: 2
   - foodType: 0
     foodMesh: {fileID: 4179205776943551302, guid: 219e253d2043b4bf382f7fbe08130e26, type: 3}
@@ -26,7 +26,7 @@ MonoBehaviour:
     foodMesh: {fileID: 3944793617797155257, guid: 273b0a646bf4f410c898f350686cf95d, type: 3}
     scale: 2
   - foodType: 4
-    foodMesh: {fileID: 4367521387075689810, guid: 42b20d68150a40f44ac9cd9a29123d7e, type: 3}
+    foodMesh: {fileID: 8554979865545778643, guid: aec8969d0290c6d4cbc587ef85a01ce4, type: 3}
     scale: 2
   - foodType: 5
     foodMesh: {fileID: 5473569773201198281, guid: fd8e0760db14a534a89257f68a4f2a8c, type: 3}
